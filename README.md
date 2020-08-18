@@ -27,12 +27,21 @@ You can see an example here: https://svelte.dev/repl/7a37b1cee629432da956cab08bf
 ```html
 <script>
   import {Loading, acts} from '@tadashi/svelte-loading'
-  import {Btn} from '@tadashi/svelte-loading'
+  import Btn from '@tadashi/svelte-btn'
 
   function show() {
     acts.show(true)
   }
+
+  function handleKeydown(event) {
+    if (event.key === 'Escape') {
+      event.preventDefault()
+      acts.show(false)
+    }
+  }
 </script>
+
+<svelte:window on:keydown={handleKeydown}/>
 
 <Btn type="button" on:click={show}>Show</Btn>
 <Loading />
