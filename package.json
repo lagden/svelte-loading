@@ -1,6 +1,6 @@
 {
   "name": "@tadashi/svelte-loading",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Svelte component",
   "author": "Thiago Lagden",
   "license": "MIT",
@@ -24,7 +24,7 @@
   "svelte": "src/index.js",
   "main": "src/index.js",
   "scripts": {
-    "coverage": "jest test --coverageReporters=text-summary --coverageReporters=lcov",
+    "coverage": "jest test --coverage --coverageReporters=lcov",
     "rm": "rm -rf dist",
     "rollup": "rollup -c",
     "build": "run-s test rm rollup",
