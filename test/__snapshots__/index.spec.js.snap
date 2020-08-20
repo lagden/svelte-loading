@@ -4,7 +4,7 @@ exports[`Loading should match snapshot 1`] = `
 <body>
   <div>
     <div
-      class="_tadashi_svelte_loading svelte-pebu2y"
+      class="_tadashi_svelte_loading  svelte-pebu2y"
     >
       <div
         class="_tadashi_svelte_loading_animation svelte-pebu2y"
