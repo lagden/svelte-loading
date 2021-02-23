@@ -11,17 +11,17 @@ export default {
 	input: 'src/index.js',
 	output: [
 		{
-			file: `dist/index.mjs`,
+			file: `dist/index.js`,
 			format: 'es'
 		},
 		{
-			file: `dist/index.js`,
-			format:'umd',
-			name
+			name,
+			file: `dist/index.umd.js`,
+			format:'umd'
 		}
 	],
 	plugins: [
-		resolve(),
-		svelte()
+		svelte({emitCss: false}),
+		resolve({browser: true})
 	]
 }

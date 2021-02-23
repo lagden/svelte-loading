@@ -4,6 +4,7 @@
 
 	let className = ''
 	export {className as class}
+	className = [...new Set(className.split(' '))].join(' ')
 </script>
 
 {#if $isloading}
@@ -33,6 +34,9 @@
 		left: 0;
 		width: 100vw;
 		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		z-index: var(--tadashi_svelte_loading_z_index);
 	}
 
@@ -44,9 +48,6 @@
 		border-right-color: var(--tadashi_svelte_loading_animation_border_right_color);
 		border-radius: var(--tadashi_svelte_loading_animation_border_radius);
 		animation: _tadashi_svelte_loading_rotate var(--tadashi_svelte_loading_animation_duration) infinite linear;
-		position: absolute;
-		left: 50%;
-		top: 50%;
 	}
 
 	@keyframes _tadashi_svelte_loading_rotate {

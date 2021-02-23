@@ -4,10 +4,10 @@ exports[`Loading should match snapshot 1`] = `
 <body>
   <div>
     <div
-      class="_tadashi_svelte_loading  svelte-pebu2y"
+      class="_tadashi_svelte_loading  svelte-1p2n5t7"
     >
       <div
-        class="_tadashi_svelte_loading_animation svelte-pebu2y"
+        class="_tadashi_svelte_loading_animation svelte-1p2n5t7"
       />
     </div>
     
