@@ -17,7 +17,7 @@
 	:root {
 		--tadashi_svelte_loading_background_color: hsla(0, 0%, 0%, 0.2);
 		--tadashi_svelte_loading_background_image: none;
-		--tadashi_svelte_loading_z_index: 99;
+		--tadashi_svelte_loading_zindex: 99;
 
 		--tadashi_svelte_loading_animation_padding: 15px;
 		--tadashi_svelte_loading_animation_border: 6px solid hsl(0, 0%, 80%);
@@ -37,7 +37,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		z-index: var(--tadashi_svelte_loading_z_index);
+		z-index: var(--tadashi_svelte_loading_zindex);
 	}
 
 	._tadashi_svelte_loading_animation {
