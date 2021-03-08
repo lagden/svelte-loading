@@ -9,7 +9,12 @@ describe('Loading', () => {
 	test('should match snapshot', () => {
 		acts.show(true)
 
-		const {container} = render(Loading)
+		const {container} = render(Loading, {
+			props: {
+				class: 'teste',
+				'data-theme': 'dark'
+			}
+		})
 		expect(container).toMatchSnapshot()
 	})
 })

@@ -2,14 +2,13 @@
 	import {fade} from 'svelte/transition'
 	import {isloading} from './store'
 
-	if (Reflect.has($$restProps, 'class')) {
-		Reflect.deleteProperty($$restProps, 'class')
-	}
+	let className = ''
+	export {className as class}
 </script>
 
 {#if $isloading}
 	<div
-		class="_tadashi_svelte_loading"
+		class="_tadashi_svelte_loading {className}"
 		transition:fade|local={{duration: 400}}
 		{...$$restProps}
 	>
