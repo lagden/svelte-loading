@@ -41,10 +41,22 @@ You can see an example here: https://svelte.dev/repl/7a37b1cee629432da956cab08bf
   }
 </script>
 
-<svelte:window on:keydown={handleKeydown}/>
-
 <Btn type="button" on:click={show}>Show</Btn>
-<Loading />
+<Loading data-theme="green"/>
+
+<svelte:window on:keydown={handleKeydown}/>
+<svelte:head>
+  <!-- global style  -->
+  <style>
+    ._tadashi_svelte_loading {
+      --tadashi_svelte_loading_zindex: 1011;
+    }
+
+    ._tadashi_svelte_loading[data-theme="green"] > ._tadashi_svelte_loading_animation {
+      border-right-color: green
+    }
+  </style>
+</svelte:head>
 ```
 
 
