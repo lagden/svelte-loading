@@ -18,13 +18,13 @@
 
 <style type="text/css">
 	:root {
-		--tadashi_svelte_loading_background_color: hsla(0, 0%, 0%, 0.2);
+		--tadashi_svelte_loading_background_color: hsl(0deg 0% 0% / 20%);
 		--tadashi_svelte_loading_background_image: none;
 		--tadashi_svelte_loading_zindex: 99;
 
 		--tadashi_svelte_loading_animation_padding: 15px;
-		--tadashi_svelte_loading_animation_border: 6px solid hsl(0, 0%, 80%);
-		--tadashi_svelte_loading_animation_border_right_color: hsl(0, 0%, 50%);
+		--tadashi_svelte_loading_animation_border: 6px solid hsl(0deg 0% 80%);
+		--tadashi_svelte_loading_animation_border_right_color: hsl(0deg 0% 50%);
 		--tadashi_svelte_loading_animation_border_radius: 22px;
 		--tadashi_svelte_loading_animation_duration: 0.5s;
 	}
