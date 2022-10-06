@@ -1,5 +1,12 @@
-import {isloading} from './store'
+import {writable} from 'svelte/store'
 
-export function show(value) {
+const isloading = writable(false)
+const show = value => {
 	isloading.set(value)
+}
+
+
+export {
+	isloading,
+	show,
 }

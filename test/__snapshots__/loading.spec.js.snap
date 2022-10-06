@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading Jelly should match snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="_tadashi_svelte_loading teste svelte-1ej2r2y"
+    >
+      <div
+        class="jelly svelte-1qkf8ue"
+        style="--uib-color: black;"
+      />
+       
+      <svg
+        class="jelly-maker svelte-1qkf8ue"
+        height="0"
+        width="0"
+      >
+        <defs>
+          <filter
+            id="uib-jelly-ooze"
+          >
+            <fegaussianblur
+              in="SourceGraphic"
+              result="blur"
+              stdDeviation="6.25"
+            />
+            <fecolormatrix
+              in="blur"
+              mode="matrix"
+              result="ooze"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+            />
+            <feblend
+              in="SourceGraphic"
+              in2="ooze"
+            />
+          </filter>
+        </defs>
+      </svg>
+    </div>
+    
+  </div>
+</body>
+`;
+
+exports[`Loading ThreeBall should match snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="_tadashi_svelte_loading teste svelte-1ej2r2y"
+    >
+      <div
+        class="chaotic-orbit svelte-yt47nr"
+        style="--uib-color: black;"
+      />
+    </div>
+    
+  </div>
+</body>
+`;
+
+exports[`Loading default should match snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="_tadashi_svelte_loading teste svelte-1ej2r2y"
+    >
+      <svg
+        class="ring svelte-u9avcq"
+        stroke-width="5"
+        style="--uib-color:black;"
+        viewBox="25 25 50 50"
+      >
+        <circle
+          class="svelte-u9avcq"
+          cx="50"
+          cy="50"
+          r="20"
+        />
+      </svg>
+    </div>
+    
+  </div>
+</body>
+`;

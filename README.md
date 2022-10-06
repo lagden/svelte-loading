@@ -4,10 +4,10 @@
 [![Build Status][ci-img]][ci]
 
 
-[npm-img]:         https://img.shields.io/npm/v/@tadashi/svelte-loading.svg
-[npm]:             https://www.npmjs.com/package/@tadashi/svelte-loading
-[ci-img]:          https://github.com/lagden/svelte-loading/workflows/Node.js%20CI/badge.svg
-[ci]:              https://github.com/lagden/svelte-loading/actions?query=workflow%3A%22Node.js+CI%22
+[npm-img]:  https://img.shields.io/npm/v/@tadashi/svelte-loading.svg
+[npm]:      https://www.npmjs.com/package/@tadashi/svelte-loading
+[ci-img]:   https://github.com/lagden/svelte-loading/workflows/Node.js%20CI/badge.svg
+[ci]:       https://github.com/lagden/svelte-loading/actions?query=workflow%3A%22Node.js+CI%22
 
 ---
 
@@ -22,18 +22,17 @@ $ npm i -S @tadashi/svelte-loading
 
 ## Usage
 
-You can see an example here: https://svelte.dev/repl/7a37b1cee629432da956cab08bf2cb0f?version=3.24.1
+You can see an example here: https://svelte.dev/repl/be139b8c36074a9e9bbc824d6c8f0130?version=3.50.1
 
-```html
+```svelte
 <script>
   import {Loading, acts} from '@tadashi/svelte-loading'
-  import Btn from '@tadashi/svelte-btn'
 
   function show() {
     acts.show(true)
   }
 
-  function handleKeydown(event) {
+  function hide(event) {
     if (event.key === 'Escape') {
       event.preventDefault()
       acts.show(false)
@@ -41,25 +40,25 @@ You can see an example here: https://svelte.dev/repl/7a37b1cee629432da956cab08bf
   }
 </script>
 
-<Btn type="button" on:click={show}>Show</Btn>
-<Loading data-theme="green"/>
+<button type="button" on:click={show}>Show</button>
 
-<svelte:window on:keydown={handleKeydown}/>
-<svelte:head>
-  <!-- global style  -->
-  <style>
-    ._tadashi_svelte_loading {
-      --tadashi_svelte_loading_zindex: 1011;
-    }
+<Loading
+  animation="ThreeBall"
+  color="hsl(200deg 50% 50%)"
+  --tadashi_svelte_loading_background_color="hsl(100deg 50% 50% / 20%)"
+  --tadashi_svelte_loading_zindex=1011
+/>
 
-    ._tadashi_svelte_loading[data-theme="green"] > ._tadashi_svelte_loading_animation {
-      border-right-color: green
-    }
-  </style>
-</svelte:head>
+<svelte:window on:keydown={hide} />
 ```
+
+
+## Loaders
+
+Lightweight loaders built by [Griffin Johnston](https://twitter.com/griffinjohnston) for [UI Ball](https://uiball.com).
 
 
 ## License
 
 MIT © [Thiago Lagden](https://github.com/lagden)
+MIT © [Griffin Johnston](https://github.com/GriffinJohnston/uiball-loaders/blob/main/LICENSE)

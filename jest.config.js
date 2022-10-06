@@ -1,9 +1,10 @@
-module.exports = {
-	bail: false,
+export default {
+	extensionsToTreatAsEsm: ['.svelte'],
 	moduleFileExtensions: ['js', 'svelte'],
 	transform: {
-		'^.+\\.js$': 'babel-jest',
-		'^.+\\.svelte$': 'svelte-jester'
+		'^.+\\.svelte$': ['svelte-jester', {preprocess: false}],
 	},
-	verbose: true
+	testEnvironment: 'jsdom',
+	bail: false,
+	verbose: true,
 }
