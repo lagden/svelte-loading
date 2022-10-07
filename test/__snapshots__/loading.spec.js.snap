@@ -44,22 +44,6 @@ exports[`Loading Jelly should match snapshot 1`] = `
 </body>
 `;
 
-exports[`Loading ThreeBall should match snapshot 1`] = `
-<body>
-  <div>
-    <div
-      class="_tadashi_svelte_loading teste svelte-1ej2r2y"
-    >
-      <div
-        class="chaotic-orbit svelte-yt47nr"
-        style="--uib-color: black;"
-      />
-    </div>
-    
-  </div>
-</body>
-`;
-
 exports[`Loading default should match snapshot 1`] = `
 <body>
   <div>
