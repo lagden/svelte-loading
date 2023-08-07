@@ -1,0 +1,89 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Loading 1`] = `
+<div
+  class="_tadashi_svelte_loading s-rumqwqG3Ogas"
+  style=""
+>
+  <svg
+    class="ring s-VzEkOmBnbMsD"
+    stroke-width="5"
+    viewBox="25 25 50 50"
+  >
+    <circle
+      class="s-VzEkOmBnbMsD"
+      cx="50"
+      cy="50"
+      r="20"
+    />
+  </svg>
+  <!--&lt;Ring&gt;-->
+</div>
+`;
+
+exports[`Loading name 1`] = `
+<div
+  class="_tadashi_svelte_loading s-rumqwqG3Ogas"
+  style=""
+>
+  <div
+    class="jelly s-w6j_BusLbHkw"
+  />
+   
+  <svg
+    class="jelly-maker s-w6j_BusLbHkw"
+    height="0"
+    width="0"
+  >
+    <defs
+      class="s-w6j_BusLbHkw"
+    >
+      <filter
+        class="s-w6j_BusLbHkw"
+        id="uib-jelly-ooze"
+      >
+        <fegaussianblur
+          class="s-w6j_BusLbHkw"
+          in="SourceGraphic"
+          result="blur"
+          stdDeviation="6.25"
+        />
+        <fecolormatrix
+          class="s-w6j_BusLbHkw"
+          in="blur"
+          mode="matrix"
+          result="ooze"
+          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+        />
+        <feblend
+          class="s-w6j_BusLbHkw"
+          in="SourceGraphic"
+          in2="ooze"
+        />
+      </filter>
+    </defs>
+  </svg>
+  <!--&lt;Jelly&gt;-->
+</div>
+`;
+
+exports[`Loading not exist 1`] = `
+<div
+  class="_tadashi_svelte_loading s-rumqwqG3Ogas"
+  style=""
+>
+  <svg
+    class="ring s-VzEkOmBnbMsD"
+    stroke-width="5"
+    viewBox="25 25 50 50"
+  >
+    <circle
+      class="s-VzEkOmBnbMsD"
+      cx="50"
+      cy="50"
+      r="20"
+    />
+  </svg>
+  <!--&lt;Ring&gt;-->
+</div>
+`;
