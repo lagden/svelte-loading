@@ -23,8 +23,8 @@ jobs:
       - name: Install pnpm
         run: npm i -g pnpm
 
-      - name: Install playwright browsers
-        run: pnpm dlx playwright install --with-deps
+      # - name: Install playwright browsers
+      #   run: pnpm dlx playwright install --with-deps
 
       - name: Install dependencies
         run: pnpm install
