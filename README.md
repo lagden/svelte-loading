@@ -22,7 +22,7 @@ $ npm i -S @tadashi/svelte-loading
 ```
 
 
-### CSS Vars
+## CSS Vars
 
 vars                                               | default
 ---------------------------------------------------| --------------------------------
@@ -67,7 +67,6 @@ You can see an example here: https://svelte.dev/repl/be139b8c36074a9e9bbc824d6c8
 
 <Loading
   animation="ThreeBall"
-  color="hsl(200deg 50% 50%)"
   --tadashi_svelte_loading_background_color="hsl(100deg 50% 50% / 20%)"
   --tadashi_svelte_loading_zindex=1011
 />
