@@ -70,7 +70,6 @@ exports[`Loading name 1`] = `
 exports[`Loading not exist 1`] = `
 <div
   class="_tadashi_svelte_loading s-rumqwqG3Ogas"
-  style=""
 >
   <svg
     class="ring s-VzEkOmBnbMsD"
