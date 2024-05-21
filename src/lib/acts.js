@@ -1,4 +1,4 @@
-import storeLoading, * as store from './store'
+import storeLoading, * as store from './store.js'
 
 export function getLoading(name) {
 	const loading = name ? store.unique(name) : storeLoading
@@ -6,22 +6,22 @@ export function getLoading(name) {
 }
 
 export function open(name) {
-	const loading = getLoading(name)
+	const loading = store.getUnique(name)
 	if (loading) {
-		loading.open()
+		loading.openIt()
 	}
 }
 
 export function close(name) {
-	const loading = getLoading(name)
+	const loading = store.getUnique(name)
 	if (loading) {
-		loading.close()
+		loading.closeIt()
 	}
 }
 
 export function show(value, name) {
-	const loading = getLoading(name)
+	const loading = store.getUnique(name)
 	if (loading) {
-		value ? open(name) : close(name)
+		value ? loading.openIt(name) : loading.closeIt(name)
 	}
 }

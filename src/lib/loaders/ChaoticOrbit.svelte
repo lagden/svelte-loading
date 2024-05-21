@@ -1,4 +1,7 @@
-<div class="chaotic-orbit" {...$$restProps}></div>
+<div
+	class="chaotic-orbit"
+	{...$$restProps}
+></div>
 
 <style>
 .chaotic-orbit {
@@ -28,8 +31,7 @@
 }
 
 .chaotic-orbit::after {
-	animation: orbit var(--uib-speed, 1.5s) linear calc(var(--uib-speed, 1.5s) / -2)
-		infinite;
+	animation: orbit var(--uib-speed, 1.5s) linear calc(var(--uib-speed, 1.5s) / -2) infinite;
 }
 
 @keyframes rotate {

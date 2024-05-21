@@ -2,7 +2,6 @@ import {writable} from 'svelte/store'
 
 const loadingMap = new Map()
 const base = {
-	open: false,
 	isloading: false,
 }
 
@@ -11,20 +10,26 @@ function loadingStore() {
 	return {
 		set,
 		subscribe,
-		open: () => update(n => {
-			n.open = true
-			n.isloading = true
-			return n
-		}),
-		close: () => update(n => {
-			n.open = false
-			n.isloading = false
-			return n
-		}),
+		update,
+		openIt() {
+			update(n => {
+				n.isloading = true
+				return n
+			})
+		},
+		closeIt() {
+			update(n => {
+				n.isloading = false
+				return n
+			})
+		},
 	}
 }
 
-export function unique(name) {
+/**
+ * @param {string=} name
+ */
+function unique(name) {
 	if (loadingMap.has(name)) {
 		return loadingMap.get(name)
 	}
@@ -32,8 +37,18 @@ export function unique(name) {
 	return loadingMap.get(name)
 }
 
+/**
+ * @param {string=} name
+ */
+function getUnique(name) {
+	if (name !== undefined && loadingMap.has(name)) {
+		return loadingMap.get(name)
+	}
+}
+
 const KEY = Symbol.for('store.loading')
-const singleton = {}
+const singleton = Object.create(null)
 singleton[KEY] = loadingStore()
 
 export default singleton[KEY]
+export {base, unique, getUnique}

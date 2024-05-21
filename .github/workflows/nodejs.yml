@@ -9,28 +9,25 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20]
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install pnpm
         run: npm i -g pnpm
 
-      # - name: Install playwright browsers
-      #   run: pnpm dlx playwright install --with-deps
-
       - name: Install dependencies
         run: pnpm install
 
       - name: Run test
-        run: pnpm test
+        run: npm test
 
       - name: Coveralls
         uses: coverallsapp/github-action@master

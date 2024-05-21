@@ -21,27 +21,16 @@ Svelte component
 $ npm i -S @tadashi/svelte-loading
 ```
 
-
 ## CSS Vars
 
-vars                                               | default
----------------------------------------------------| --------------------------------
---uib-color                                        | black
---uib-size                                         | depends on loader
---uib-speed                                        | depends on loader
-\-                                                 | \-
---tadashi_svelte_loading_background_color          | hsl(0deg 0% 0% / 20%)
---tadashi_svelte_loading_background_image          | none
---tadashi_svelte_loading_fixed                     | fixed
---tadashi_svelte_loading_top                       | 0
---tadashi_svelte_loading_left                      | 0
---tadashi_svelte_loading_width                     | 100vw
---tadashi_svelte_loading_height                    | 100vh
---tadashi_svelte_loading_flex                      | flex
---tadashi_svelte_loading_align_items               | center
---tadashi_svelte_loading_justify_content           | center
---tadashi_svelte_loading_zindex                    | 99
-
+| vars                                      | default             |
+| ----------------------------------------- | ------------------- |
+| --uib-color                               | black               |
+| --uib-size                                | depends on loader   |
+| --uib-speed                               | depends on loader   |
+| \-                                        | \-                  |
+| --tadashi-svelte-loading-background-color | oklch(0% 0 0 / 0.3) |
+| --tadashi-svelte-loading-duration         | 0.5s                |
 
 ## Usage
 
@@ -63,27 +52,26 @@ You can see an example here: https://svelte.dev/repl/be139b8c36074a9e9bbc824d6c8
   }
 </script>
 
-<button type="button" on:click={show}>Show</button>
+<button
+  type="button"
+  on:click={show}>Show</button
+>
 
 <Loading
   animation="ThreeBall"
-  --tadashi_svelte_loading_background_color="hsl(100deg 50% 50% / 20%)"
-  --tadashi_svelte_loading_zindex=1011
+  --tadashi-svelte-loading-background-color="hsl(100deg 50% 50% / 40%)"
 />
 
 <svelte:window on:keydown={hide} />
 ```
 
-
 ## Loaders
 
 Lightweight loaders built by [Griffin Johnston](https://twitter.com/griffinjohnston) for [UI Ball](https://uiball.com).
 
-
-## Donate ❤️
+## Buy Me a Coffee
 
 BTC: bc1q7famhuj5f25n6qvlm3sssnymk2qpxrfwpyq7g4
-
 
 ## License
 

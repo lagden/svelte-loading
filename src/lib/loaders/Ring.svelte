@@ -4,7 +4,11 @@
 	stroke-width="5"
 	{...$$restProps}
 >
-	<circle cx="50" cy="50" r="20" />
+	<circle
+		cx="50"
+		cy="50"
+		r="20"
+	/>
 </svg>
 
 <style>

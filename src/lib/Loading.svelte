@@ -1,45 +1,109 @@
 <script>
-	import {fade} from 'svelte/transition'
-	import {getLoading} from './acts.js'
+import {getLoading} from './acts.js'
 
-	import ChaoticOrbit from './loaders/ChaoticOrbit.svelte'
-	import Jelly from './loaders/Jelly.svelte'
-	import Ring from './loaders/Ring.svelte'
-	import ThreeBody from './loaders/ThreeBody.svelte'
+import ChaoticOrbit from './loaders/ChaoticOrbit.svelte'
+import Jelly from './loaders/Jelly.svelte'
+import Ring from './loaders/Ring.svelte'
+import ThreeBody from './loaders/ThreeBody.svelte'
 
-	export let animation = 'Ring'
-	export let name = undefined
+export let animation = 'Ring'
+export let name = undefined
+export let full = true
 
-	const loading = getLoading(name)
-	const animationMap = {
-		ChaoticOrbit,
-		Jelly,
-		Ring,
-		ThreeBody,
+const loading = getLoading(name)
+const animationMap = {
+	ChaoticOrbit,
+	Jelly,
+	Ring,
+	ThreeBody,
+}
+const component = animationMap?.[animation] ?? Ring
+
+let popoverElement
+const toogle = v => {
+	if (popoverElement) {
+		v ? popoverElement.showPopover() : popoverElement.hidePopover()
 	}
-	const component = animationMap?.[animation] ?? Ring
-	// const fadeProps = {duration: 400}
+}
+
+const unsubscribe = loading.subscribe(n => {
+	toogle(n.isloading)
+})
+
+/**
+ * Initializes the dialog element and appends it to the document body.
+ *
+ * @param {HTMLDialogElement} node - The dialog element to initialize.
+ * @returns {object} - An object with a `destroy` function to remove the loading from the DOM.
+ */
+function init(node) {
+	globalThis.document.body.insertAdjacentElement('beforeend', node)
+	return {
+		destroy() {
+			unsubscribe && unsubscribe()
+		},
+	}
+}
 </script>
 
-{#if $loading.isloading}
-	<div
-		class="_tadashi_svelte_loading"
-		transition:fade|global
-	><svelte:component this={component} /></div>
-{/if}
+<section
+	use:init
+	bind:this={popoverElement}
+	popover="manual"
+	class="tadashi-svelte-loading"
+>
+	<div class:tadashi-svelte-loading-full={full}><svelte:component this={component} /></div>
+</section>
 
 <style>
-._tadashi_svelte_loading {
-	background-color: var(--tadashi_svelte_loading_background_color, hsl(0deg 0% 0% / 20%));
-	background-image: var(--tadashi_svelte_loading_background_image, none);
-	position: var(--tadashi_svelte_loading_fixed, fixed);
-	top: var(--tadashi_svelte_loading_top, 0);
-	left: var(--tadashi_svelte_loading_left, 0);
-	width: var(--tadashi_svelte_loading_width, 100vw);
-	height: var(--tadashi_svelte_loading_height, 100vh);
-	display: var(--tadashi_svelte_loading_flex, flex);
-	align-items: var(--tadashi_svelte_loading_align_items, center);
-	justify-content: var(--tadashi_svelte_loading_justify_content, center);
-	z-index: var(--tadashi_svelte_loading_zindex, 99);
+.tadashi-svelte-loading[popover] {
+	box-sizing: border-box;
+	background-color: transparent;
+	outline: none;
+	border: none;
+	padding: 2rem;
+	inset: 0;
+	overflow: hidden;
+	pointer-events: all;
+
+	&,
+	&::backdrop {
+		opacity: 0;
+		transition:
+			display var(--tadashi-svelte-loading-duration, 0.5s) allow-discrete,
+			overlay var(--tadashi-svelte-loading-duration, 0.5s) allow-discrete,
+			opacity var(--tadashi-svelte-loading-duration, 0.5s);
+	}
+
+	&::backdrop {
+		background-color: var(--tadashi-svelte-loading-background-color, oklch(0% 0 0 / 0.3));
+	}
+
+	&:popover-open {
+		opacity: 1;
+		&::backdrop {
+			opacity: 1;
+		}
+	}
+
+	@starting-style {
+		&:popover-open,
+		&:popover-open::backdrop {
+			opacity: 0;
+		}
+	}
+}
+
+.tadashi-svelte-loading-full {
+	display: grid;
+	place-items: center;
+	position: fixed;
+	inset: 0;
+	width: -webkit-fill-available;
+	width: -moz-available;
+	width: fill-available;
+	height: -webkit-fill-available;
+	height: -moz-available;
+	height: fill-available;
 }
 </style>

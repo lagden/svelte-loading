@@ -1,26 +1,24 @@
 # Dir
-.svelte-kit
+.conf
+.github
 .vite
-build
-coverage/**
+bin
+coverage
 dist
 logs
 node_modules
-package
 resource
+test/snapshots
 
 # File
+# *.css
+*.html
 *-lock.*
 *.lock
 *.log
 *.log*
-.DS_Store
-.conf/local.sh
 .registry-*
 _cleanup
 _init
 vite.config.js.timestamp-*
-vite.config.ts.timestamp-*
-
-# Keep
-!coverage/lcov.info
+src/_components/_global/Sprite.svelte

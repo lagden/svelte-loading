@@ -1,7 +1,16 @@
 <div class="three-body">
-	<div class="three-body__dot" {...$$restProps}></div>
-	<div class="three-body__dot" {...$$restProps}></div>
-	<div class="three-body__dot" {...$$restProps}></div>
+	<div
+		class="three-body__dot"
+		{...$$restProps}
+	></div>
+	<div
+		class="three-body__dot"
+		{...$$restProps}
+	></div>
+	<div
+		class="three-body__dot"
+		{...$$restProps}
+	></div>
 </div>
 
 <style>
@@ -53,8 +62,7 @@
 .three-body__dot:nth-child(2)::after {
 	bottom: 0;
 	left: 0;
-	animation: wobble1 var(--uib-speed, 1.1s) infinite
-		calc(var(--uib-speed, 1.1s) * -0.15) ease-in-out;
+	animation: wobble1 var(--uib-speed, 1.1s) infinite calc(var(--uib-speed, 1.1s) * -0.15) ease-in-out;
 }
 
 .three-body__dot:nth-child(3) {

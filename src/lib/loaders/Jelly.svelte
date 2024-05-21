@@ -1,6 +1,13 @@
-<div class="jelly" {...$$restProps}></div>
+<div
+	class="jelly"
+	{...$$restProps}
+></div>
 
-<svg width="0" height="0" class="jelly-maker">
+<svg
+	width="0"
+	height="0"
+	class="jelly-maker"
+>
 	<defs>
 		<filter id="uib-jelly-ooze">
 			<feGaussianBlur
@@ -14,7 +21,10 @@
 				values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
 				result="ooze"
 			/>
-			<feBlend in="SourceGraphic" in2="ooze" />
+			<feBlend
+				in="SourceGraphic"
+				in2="ooze"
+			/>
 		</filter>
 	</defs>
 </svg>
@@ -25,7 +35,7 @@
 	height: calc(var(--uib-size, 50px) / 2);
 	width: var(--uib-size, 50px);
 	filter: url('#uib-jelly-ooze');
-	animation: rotate calc(var(--uib-speed, .9s) * 2) linear infinite;
+	animation: rotate calc(var(--uib-speed, 0.9s) * 2) linear infinite;
 }
 
 .jelly::before,
@@ -41,11 +51,11 @@
 }
 
 .jelly::before {
-	animation: shift-left var(--uib-speed, .9s) ease infinite;
+	animation: shift-left var(--uib-speed, 0.9s) ease infinite;
 }
 
 .jelly::after {
-	animation: shift-right var(--uib-speed, .9s) ease infinite;
+	animation: shift-right var(--uib-speed, 0.9s) ease infinite;
 }
 
 .jelly-maker {
