@@ -3,6 +3,7 @@ import {test, expect, beforeEach, vi} from 'vitest'
 import {Loading, acts} from '$lib/index.js'
 
 globalThis.HTMLElement.prototype.showPopover = vi.fn()
+globalThis.HTMLElement.prototype.hidePopover = vi.fn()
 
 function doc_query(selector) {
 	const node = document.querySelector(selector)

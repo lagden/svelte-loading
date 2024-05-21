@@ -1,5 +1,5 @@
 <script>
-import {getLoading} from './acts.js'
+import {createLoading} from './acts.js'
 
 import ChaoticOrbit from './loaders/ChaoticOrbit.svelte'
 import Jelly from './loaders/Jelly.svelte'
@@ -10,7 +10,7 @@ export let animation = 'Ring'
 export let name = undefined
 export let full = true
 
-const loading = getLoading(name)
+const loading = createLoading(name)
 const animationMap = {
 	ChaoticOrbit,
 	Jelly,

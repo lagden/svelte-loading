@@ -19,6 +19,15 @@ function hide() {
 const animations = ['ChaoticOrbit', 'Jelly', 'Ring', 'ThreeBody']
 </script>
 
+<svelte:head>
+	<style>
+	:root {
+		--uib-color: hsl(200deg 50% 50%);
+		--uib-size: 5rem;
+	}
+	</style>
+</svelte:head>
+
 <svelte:window on:keydown={hide} />
 
 {#each animations as animation}
@@ -35,11 +44,13 @@ const animations = ['ChaoticOrbit', 'Jelly', 'Ring', 'ThreeBody']
 	/>
 {/each}
 
-<svelte:head>
-	<style>
-	:root {
-		--uib-color: hsl(200deg 50% 50%);
-		--uib-size: 5rem;
-	}
-	</style>
-</svelte:head>
+<hr />
+
+<button
+	type="button"
+	on:click={() => {
+		acts.show(true)
+	}}>No name</button
+>
+
+<Loading />

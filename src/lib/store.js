@@ -46,9 +46,18 @@ function getUnique(name) {
 	}
 }
 
+/**
+ * @param {string=} name
+ */
+function remove(name) {
+	if (loadingMap.has(name)) {
+		return loadingMap.delete(name)
+	}
+}
+
 const KEY = Symbol.for('store.loading')
 const singleton = Object.create(null)
 singleton[KEY] = loadingStore()
 
 export default singleton[KEY]
-export {base, unique, getUnique}
+export {base, unique, getUnique, remove}
