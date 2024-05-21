@@ -41,7 +41,7 @@ function unique(name) {
  * @param {string=} name
  */
 function getUnique(name) {
-	if (name !== undefined && loadingMap.has(name)) {
+	if (loadingMap.has(name)) {
 		return loadingMap.get(name)
 	}
 }

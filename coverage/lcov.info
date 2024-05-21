@@ -256,9 +256,8 @@ BRDA:32,3,0,1
 BRDA:33,4,0,0
 BRDA:43,5,0,3
 BRDA:44,6,0,1
-BRDA:44,7,0,1
-BRF:8
-BRH:7
+BRF:7
+BRH:6
 end_of_record
 TN:
 SF:src/lib/loaders/ChaoticOrbit.svelte
