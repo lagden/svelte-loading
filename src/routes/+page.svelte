@@ -12,8 +12,10 @@ function toggle(animation) {
 	}
 }
 
-function hide() {
-	toggle(currentAnimation)()
+function hide(event) {
+	if (event.key === 'Escape') {
+		toggle(currentAnimation)()
+	}
 }
 
 const animations = ['ChaoticOrbit', 'Jelly', 'Ring', 'ThreeBody']
@@ -48,9 +50,7 @@ const animations = ['ChaoticOrbit', 'Jelly', 'Ring', 'ThreeBody']
 
 <button
 	type="button"
-	on:click={() => {
-		acts.show(true)
-	}}>No name</button
+	on:click={toggle()}>No name</button
 >
 
 <Loading />
