@@ -101,9 +101,9 @@ function init(node) {
 	inset: 0;
 	width: -webkit-fill-available;
 	width: -moz-available;
-	width: fill-available;
+	width: stretch;
 	height: -webkit-fill-available;
 	height: -moz-available;
-	height: fill-available;
+	height: stretch;
 }
 </style>
