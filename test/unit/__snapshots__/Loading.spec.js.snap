@@ -2,75 +2,67 @@
 
 exports[`Loading 1`] = `
 <section
-  class="tadashi-svelte-loading s-rumqwqG3Ogas"
+  class="tadashi-svelte-loading svelte-6xyaqx"
   popover="manual"
 >
   <div
-    class="s-rumqwqG3Ogas tadashi-svelte-loading-full"
+    class="svelte-6xyaqx tadashi-svelte-loading-full"
   >
     <svg
-      class="ring s-VzEkOmBnbMsD"
+      class="ring svelte-u9avcq"
       stroke-width="5"
       viewBox="25 25 50 50"
     >
       <circle
-        class="s-VzEkOmBnbMsD"
+        class="svelte-u9avcq"
         cx="50"
         cy="50"
         r="20"
       />
     </svg>
-    <!--&lt;Ring&gt;-->
   </div>
 </section>
 `;
 
 exports[`Loading name 1`] = `
 <section
-  class="tadashi-svelte-loading s-rumqwqG3Ogas"
+  class="tadashi-svelte-loading svelte-6xyaqx"
   popover="manual"
 >
   <div
-    class="s-rumqwqG3Ogas tadashi-svelte-loading-full"
+    class="svelte-6xyaqx tadashi-svelte-loading-full"
   >
     <div
-      class="jelly s-w6j_BusLbHkw"
+      class="jelly svelte-ja7cg8"
     />
      
     <svg
-      class="jelly-maker s-w6j_BusLbHkw"
+      class="jelly-maker svelte-ja7cg8"
       height="0"
       width="0"
     >
-      <defs
-        class="s-w6j_BusLbHkw"
-      >
+      <defs>
         <filter
-          class="s-w6j_BusLbHkw"
           id="uib-jelly-ooze"
         >
           <fegaussianblur
-            class="s-w6j_BusLbHkw"
             in="SourceGraphic"
             result="blur"
             stdDeviation="6.25"
           />
           <fecolormatrix
-            class="s-w6j_BusLbHkw"
             in="blur"
             mode="matrix"
             result="ooze"
             values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
           />
           <feblend
-            class="s-w6j_BusLbHkw"
             in="SourceGraphic"
             in2="ooze"
           />
         </filter>
       </defs>
     </svg>
-    <!--&lt;Jelly&gt;-->
   </div>
 </section>
 `;
